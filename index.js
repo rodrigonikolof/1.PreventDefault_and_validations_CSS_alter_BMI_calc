@@ -6,24 +6,28 @@ let displayResult = document.querySelector('#displayResult');
 
 
 submitBtn.addEventListener('click', function (e){
-    receiveInput(e);
+    validation(e);
     });
 
 
-// function validation(){
-//     if (userHeight.value == " " || userWeight.value ==" ") {
-//         displayResult.innerHTML = "Cannot be blank or zero";
-//         }
-//     else{
-        
-//         }
-//     }
+function validation(e){
+    e.preventDefault();
+    if (userHeight.value == "" || userWeight.value == "") {
+        displayResult.innerHTML = "Cannot be blank - please enter something";
+            }
+    else if (isNaN(userHeight.value) == true || isNaN(userWeight.value) == true){
+        return displayResult.innerHTML = "And how do you expect me to calculate something that isn't a number?";
+        }
+    else {
+        return receiveInput(e);
+        }
+    }
 
 function receiveInput(e){
 e.preventDefault();
 userHeight = userHeight.value;
 userWeight = userWeight.value;
-displayResult.innerHTML = userHeight + userWeight;
+displayResult.innerHTML = `Your BMI is ${(userWeight / Math.sqrt(userHeight,2)).toFixed(2)}` ;
 }
 
 
