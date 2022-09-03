@@ -1,7 +1,7 @@
 :root{
     --primary-colour: rgb(41, 103, 129); 
     --primary-colour-dark: rgb(14, 71, 95); 
-    --error-colour: rgb(236, 144, 144);
+    --error-colour: rgb(211, 100, 93);
 }
 
 * {
@@ -57,4 +57,8 @@ background: var(--primary-colour-dark);
 
 form input:focus{
     outline: 1px solid var(--primary-colour);
+}
+
+.error {
+background-color: var(--error-colour);
 }
